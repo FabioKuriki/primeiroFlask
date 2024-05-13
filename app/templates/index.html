@@ -1,8 +1,15 @@
 {% extends 'base.html' %} <!--Puxa tudo da base-->
 {% block conteudo %}
-    <p id="banner">
-        Venha comprar em umas das lojas mais conhecidas em SBC!!
-    </p>
 
-    <img src="{{url_for('static', filename='imagens/relogioSmart.png')}}">
+    <div id="banner" class="jumbotron jumbotron-fluid">
+      <div class="estruturaBanner container-fluid">
+        <h1 id="textoBanner" class="display-4">Venha comprar em umas das lojas mais conhecidas em SBC!!</h1>
+      </div>
+    </div>
+
+    <div id="banner2" class="jumbotron jumbotron-fluid">
+      <div class="estruturaBanner container-fluid">
+        <h1 id="textoBanner2" class="display-4">Onde o menor preço só se encontra aqui</h1>
+      </div>
+    </div>
 {% endblock %}

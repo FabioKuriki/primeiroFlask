@@ -1,6 +1,51 @@
+#marca{
+    font-size: 150%;
+    color: #fff;
+}
+
 #banner{
-    text-align: center;
     padding-top: 5%;
     padding-bottom: 5%;
     background-image: url(../imagens/banner.jpg);
+    background-position: center;
+    color: #fff;
 }
+
+#banner{
+    padding-top: 6%;
+    padding-bottom: 6%;
+    background-image: url(../imagens/banner.jpg);
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+}
+
+#banner2{
+    padding-top: 8%;
+    padding-bottom: 8%;
+    background-image: url(../imagens/banner3.avif);
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+}
+
+.estruturaBanner{
+    display: grid;
+    grid-template-columns: 50% 50% ;
+}
+
+#textoBanner{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+#textoBanner2{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+
