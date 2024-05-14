@@ -10,8 +10,12 @@ def index():
 
 @app.route('/contato')
 def contato():
-    return render_template('contato.html', titulo="Contato", nome="Fabio")
+    return render_template('contato.html', titulo="Contato", nome="Fabio", fundo="fundoContato")
 
 @app.route('/cadastro')
 def cadastro():
-    return render_template('cadastro.html', titulo="Cadastro", nome="Fabio")
+    return render_template('cadastro.html', titulo="Cadastro", nome="Fabio", fundo="cadastro")
+
+@app.route('/login')
+def login():
+    return render_template('login.html', titulo="Login", nome="Fabio")

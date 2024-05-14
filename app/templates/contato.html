@@ -1,8 +1,27 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-  <p>
-    Página de Contatos
-  </p>
 
-  <img src="{{url_for('static', filename='imagens/relogioDigital.png')}}">
+<!--Arrumar dps-->
+
+    <div class="container-fluid" id="ladoDireito">
+        <div class="col">
+            <div id="textoContato">
+          <h1>Dúvidas?</h1>
+        <p>
+            <br>Entre em contato com a nossa equipe de suporte pelos meios de comunicação
+            abaixo:<br><br>
+        </p>
+        <h3><br>Localização</h3>
+        <p><br>Rua Sem Tempo, 124, São Paulo<br><br></p>
+        <h3>Telefone</h3>
+        <p><br>Celular - (11) 97638-9090<br><br>Fixo - (11) 4568-2138</p>
+        <h3><br>E-mail</h3>
+        <p><br>relojoariaSBC@outlook.com<br><br></p>
+        </div>
+        </div>
+    </div>
+    <div id="ladoEsquerdo">
+        <img id="imgContato" src="{{url_for('static', filename='imagens/entreEmContato.avif')}}">
+    </div>
+
 {% endblock %}

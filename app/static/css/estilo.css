@@ -39,6 +39,7 @@
     grid-column-end: 1;
     grid-row-start: 1;
     grid-row-end: 1;
+    margin-left: 4%;
 }
 
 #textoBanner2{
@@ -48,4 +49,50 @@
     grid-row-end: 1;
 }
 
+.caixaCadastro{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    margin-left: 35%;
+    margin-top: -8%;
+}
 
+#cadastro{
+    display: grid;
+    grid-template-columns: 50% 50% ;
+    background-image: url(../imagens/backgroundCadastro.png);
+    object-fit: cover;
+    background-position: center;
+    padding-top: 10%;
+    padding-bottom: 15%;
+}
+
+#fundoContato{
+    display: grid;
+    grid-template-columns: 50% 50% ;
+}
+
+#ladoDireito{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    border-left: 2px solid
+}
+
+#ladoEsquerdo{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+#textoContato{
+    margin-left: 3%;
+    margin-top: 1%;
+}
+
+#imgContato{
+    margin-left: 6%;
+}

@@ -17,7 +17,7 @@
               <a class="navbar-brand" href="/index"><span id="marca" class="navbar-brand mb-0 h1">RelojoariaSBC</span></a>
           </div>
           <div>
-             <a class="navbar-brand" href="/index"><span class="navbar-brand mb-0 h1 text-light">Login</span></a>
+             <a class="navbar-brand" href="/login"><span class="navbar-brand mb-0 h1 text-light">Login</span></a>
              <a class="navbar-brand" href="/cadastro"><span class="navbar-brand mb-0 h1 text-light">Cadastro</span></a>
           </div>
       </div>
@@ -34,13 +34,16 @@
         <a class="nav-link text-light" href="#">História</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-light" href="#">Contatos</a>
+        <a class="nav-link text-light" href="/contato">Contatos</a>
       </li>
     </ul>
 
 <!--  Conteúdo a ser colocado-->
-  {% block conteudo %}
-  {% endblock %}
+    <div id="{{fundo}}">
+        {% block conteudo %}
+        {% endblock %}
+    </div>
+
 
   <footer>
       <nav class="navbar fixed-bottom bg-body-tertiary">

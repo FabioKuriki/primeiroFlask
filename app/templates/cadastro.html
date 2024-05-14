@@ -1,32 +1,40 @@
 {% extends 'base.html' %}
 {% block conteudo %}
 
-    <div class="row">&nbsp</div>
-    <form class="container-fluid  row g-4">
-      <div class="col-md-4">
-        <label for="inputEmail4" class="form-label">Nome</label>
-        <input type="text" class="form-control" aria-label="First name">
+     <div class="caixaCadastro card" style="width: 30rem;">
+      <div class="card-body">
+            <form class="container-fluid  row g-4">
+                <div class="row">&nbsp</div>
+            <div class="row">
+                <div class="col-6">
+                <label for="inputEmail4" class="form-label">Nome</label>
+                <input type="text" class="form-control" aria-label="First name">
+                </div>
+                <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Sobrenome</label>
+                <input type="text" class="form-control" aria-label="Last name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label">E-mail</label>
+                  <input type="email" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputPassword4" class="form-label">Senha</label>
+                  <input type="password" class="form-control" id="inputPassword4">
+                </div>
+            </div>
+            <div class="col-md-12">
+              <label for="inputAddress" class="form-label">Endereço</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="Rua...">
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Realizar Cadastro</button>
+            </div>
+         </form>
       </div>
-      <div class="col-md-4">
-        <label for="inputEmail4" class="form-label">Sobrenome</label>
-        <input type="text" class="form-control" aria-label="Last name">
-      </div>
     </div>
-    <div class="col-md-4">
-      <label for="inputEmail4" class="form-label">Email</label>
-      <input type="email" class="form-control" id="inputEmail4">
-    </div>
-    <div class="col-md-4">
-      <label for="inputPassword4" class="form-label">Password</label>
-      <input type="password" class="form-control" id="inputPassword4">
-    </div>
-    <div class="col-md-4">
-      <label for="inputAddress" class="form-label">Endereço</label>
-      <input type="text" class="form-control" id="inputAddress" placeholder="Rua...">
-    </div>
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary">Realizar Cadastro</button>
-    </div>
-  </form>
+
 
 {% endblock %}
