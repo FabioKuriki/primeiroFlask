@@ -49,23 +49,20 @@
     grid-row-end: 1;
 }
 
-.caixaCadastro{
-    grid-column-start: 1;
-    grid-column-end: 1;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    margin-left: 35%;
-    margin-top: -8%;
-}
-
 #cadastro{
-    display: grid;
-    grid-template-columns: 50% 50% ;
     background-image: url(../imagens/backgroundCadastro.png);
-    object-fit: cover;
+    background-size: cover;
     background-position: center;
     padding-top: 10%;
-    padding-bottom: 15%;
+    padding-bottom: 20%;
+}
+
+#fundoLogin{
+    background-image: url(../imagens/backgroundCadastro.png);
+    background-size: cover;
+    background-position: center;
+    padding-top: 10%;
+    padding-bottom: 20%;
 }
 
 #fundoContato{
@@ -78,7 +75,7 @@
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 1;
-    border-left: 2px solid
+    border-left: 2px solid;
 }
 
 #ladoEsquerdo{
