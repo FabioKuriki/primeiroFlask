@@ -10,7 +10,7 @@ def index():
 
 @app.route('/contato')
 def contato():
-    return render_template('contato.html', titulo="Contato", nome="Fabio", fundo="fundoContato")
+    return render_template('contato.html', titulo="Contato", nome="Fabio")
 
 @app.route('/cadastro')
 def cadastro():
@@ -19,3 +19,11 @@ def cadastro():
 @app.route('/login')
 def login():
     return render_template('login.html', titulo="Login", nome="Fabio", fundo="fundoLogin")
+
+@app.route('/relogios')
+def relogios():
+    return render_template('relogios.html', titulo="Relogios", nome="Fabio")
+
+@app.route('/historia')
+def historia():
+    return render_template('historia.html', titulo="História", nome="Fabio")

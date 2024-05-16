@@ -52,9 +52,9 @@
 #cadastro{
     background-image: url(../imagens/backgroundCadastro.png);
     background-size: cover;
-    background-position: center;
     padding-top: 10%;
     padding-bottom: 20%;
+    background-attachment: fixed;
 }
 
 #fundoLogin{
@@ -63,26 +63,7 @@
     background-position: center;
     padding-top: 10%;
     padding-bottom: 20%;
-}
-
-#fundoContato{
-    display: grid;
-    grid-template-columns: 50% 50% ;
-}
-
-#ladoDireito{
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    border-left: 2px solid;
-}
-
-#ladoEsquerdo{
-    grid-column-start: 1;
-    grid-column-end: 1;
-    grid-row-start: 1;
-    grid-row-end: 1;
+    background-attachment: fixed;
 }
 
 #textoContato{
@@ -92,4 +73,15 @@
 
 #imgContato{
     margin-left: 6%;
+}
+
+#textoCadastro, #textoLogin, #menu, #menu2, #menu3, #menu4{
+    color: #fff
+}
+
+#menu:hover, #menu2:hover, #menu3:hover, #menu4:hover{
+    color: #1E90FF
+}
+#textoCadastro:hover, #textoLogin:hover{
+    color: #6A5ACD
 }

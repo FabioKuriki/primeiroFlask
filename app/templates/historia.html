@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+    <div class="row container-fluid">
+        <div style="border-right: 2px solid" class="col">
+            <div id="textoContato">
+              <h1>Como tudo começou</h1>
+
+            </div>
+        </div>
+        <div class="col">
+            <img id="imgContato" src="{{url_for('static', filename='imagens/entreEmContato.avif')}}">
+        </div>
+    </div>
+
+{% endblock %}
