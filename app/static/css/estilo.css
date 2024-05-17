@@ -57,12 +57,10 @@
     background-attachment: fixed;
 }
 
-#fundoLogin{
+#fundoLoginCadastro{
     background-image: url(../imagens/backgroundCadastro.png);
     background-size: cover;
     background-position: center;
-    padding-top: 10%;
-    padding-bottom: 20%;
     background-attachment: fixed;
 }
 
@@ -85,3 +83,8 @@
 #textoCadastro:hover, #textoLogin:hover{
     color: #6A5ACD
 }
+
+#caixa{
+    margin-top: 10%;
+}
+
