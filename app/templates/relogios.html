@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% block conteudo %}
 
+    <div id="fundoRelogios">
+        Os Melhores relógios de São Bernardo do Campo
+    </div>
+    <br>
     <div id="carouselExample" class="container-fluid carousel carousel-dark slide">
       <h2 style="border-bottom: 2px solid purple">Conheça os nossos produtos!</h2>
       <div class="carousel-inner">
@@ -8,7 +12,7 @@
           <div class="row">
             <div class="col"></div>
             <div class="col">
-              <div class="card text-center" style="width: 18rem;">
+              <div class="cardRelogio card text-center" style="width: 18rem;">
                 <img src="{{url_for('static', filename='imagens/relogioDigital.png')}}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Relógio Digital Casio</h5>
@@ -18,7 +22,7 @@
                 </div>
               </div>
             <div class="col">
-                <div class="card text-center" style="width: 18rem;">
+                <div class="cardRelogio card text-center" style="width: 18rem;">
                     <img style="padding-bottom: 10%; padding-top: 10%" src="{{url_for('static', filename='imagens/relogioDigital2.png')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">SmartWatch Simples</h5>
@@ -28,7 +32,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card text-center" style="width: 18rem;">
+                <div class="cardRelogio card text-center" style="width: 18rem;">
                     <img style="padding-bottom: 10%; padding-top: 10%" src="{{url_for('static', filename='imagens/relogioPonteiro.png')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Relógio de Ponteiro</h5>
@@ -38,7 +42,7 @@
                 </div>
             </div>
             <div class="col">
-              <div class="card text-center" style="width: 18rem;">
+              <div class="cardRelogio card text-center" style="width: 18rem;">
                   <img style="padding-bottom: 14%; padding-top: 13%" src="{{url_for('static', filename='imagens/relogioSmart.png')}}" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">SmartWatch Básico</h5>
@@ -47,14 +51,14 @@
                   </div>
               </div>
             </div>
-            <div class="col text-center"></div>
+            <div class="col"></div>
           </div>
         </div>
         <div class="carousel-item">
           <div class="row">
             <div class="col"></div>
             <div class="col">
-              <div class="card text-center" style="width: 18rem;">
+              <div class="cardRelogio card text-center" style="width: 18rem;">
                 <img style="padding-bottom: 10%; padding-top: 10%"src="{{url_for('static', filename='imagens/relogio.jpg')}}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Relógio Infantil Rosa</h5>
@@ -64,7 +68,7 @@
                 </div>
               </div>
             <div class="col">
-                <div class="card text-center" style="width: 18rem;">
+                <div class="cardRelogio card text-center" style="width: 18rem;">
                     <img style="padding-bottom: 7%; padding-top: 6%" src="{{url_for('static', filename='imagens/relogio2.jpg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">SmartWatch Dourado</h5>
@@ -74,7 +78,7 @@
                 </div>
             </div>
             <div class="col">
-              <div class="card text-center" style="width: 18rem;">
+              <div class="cardRelogio card text-center" style="width: 18rem;">
                   <img style="padding-bottom: 10%; padding-top: 10%" src="{{url_for('static', filename='imagens/relogio3.jpg')}}" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">Relógio Pulseira</h5>
@@ -84,7 +88,7 @@
               </div>
             </div>
             <div class="col text-center">
-                <div class="card" style="width: 18rem;">
+                <div class="cardRelogio card" style="width: 18rem;">
                     <img style="padding-bottom: 10%; padding-top: 10%" src="{{url_for('static', filename='imagens/relogio4.png')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">SmartWatch Black</h5>

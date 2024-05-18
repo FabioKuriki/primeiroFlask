@@ -1,6 +1,7 @@
 #marca{
     font-size: 150%;
     color: #fff;
+    font-family: minhaFonte;
 }
 
 #banner{
@@ -49,14 +50,6 @@
     grid-row-end: 1;
 }
 
-#cadastro{
-    background-image: url(../imagens/backgroundCadastro.png);
-    background-size: cover;
-    padding-top: 10%;
-    padding-bottom: 20%;
-    background-attachment: fixed;
-}
-
 #fundoLoginCadastro{
     background-image: url(../imagens/backgroundCadastro.png);
     background-size: cover;
@@ -67,6 +60,7 @@
 #textoContato{
     margin-left: 3%;
     margin-top: 1%;
+    text-align: justify;
 }
 
 #imgContato{
@@ -74,17 +68,36 @@
 }
 
 #textoCadastro, #textoLogin, #menu, #menu2, #menu3, #menu4{
-    color: #fff
+    color: #fff;
 }
 
 #menu:hover, #menu2:hover, #menu3:hover, #menu4:hover{
-    color: #1E90FF
+    color: #1E90FF;
+    font-size: 120%;
 }
 #textoCadastro:hover, #textoLogin:hover{
-    color: #6A5ACD
+    color: #6A5ACD;
 }
 
-#caixa{
-    margin-top: 10%;
+@font-face { /*Escolhendo uma fonte*/
+    font-family: 'minhaFonte';
+    src: url(../fontes/Sugar\ Latte.otf);
 }
+
+.cardRelogio:hover{
+   padding: 10%;
+}
+
+#fundoRelogios{
+    background-image: url(../imagens/bannerSBC.jpg);
+    background-position: center;
+    background-color: #000;
+    color: #fff;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 150%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
+
 

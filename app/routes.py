@@ -14,11 +14,11 @@ def contato():
 
 @app.route('/cadastro')
 def cadastro():
-    return render_template('cadastro.html', titulo="Cadastro", nome="Fabio", fundo="fundoLoginCadastro")
+    return render_template('cadastro.html', titulo="Cadastro", nome="Fabio", fundoId="fundoLoginCadastro")
 
 @app.route('/login')
 def login():
-    return render_template('login.html', titulo="Login", nome="Fabio", fundo="fundoLoginCadastro")
+    return render_template('login.html', titulo="Login", nome="Fabio", fundoId="fundoLoginCadastro")
 
 @app.route('/relogios')
 def relogios():
