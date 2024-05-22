@@ -1,41 +1,49 @@
 {% extends 'base.html' %}
 {% block conteudo %}
 
-    <br><br><br><br><br><br>
+    <br><br><br><br>
     <div class="container-fluid row">
         <div class="col"></div>
             <div class="card" style="width: 30rem;">
               <div class="card-body">
-                    <form class="container-fluid  row g-4">
+                    <form action="/cadastrarUsuario" method="POST" class="container-fluid  row g-3">
                         <div class="row">&nbsp</div>
                         <div class="row">
                             <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Nome</label>
-                            <input type="text" class="form-control" aria-label="First name">
+                            <input type="text" class="form-control" aria-label="First name" name="nome"><br>
                             </div>
                             <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Sobrenome</label>
-                            <input type="text" class="form-control" aria-label="Last name">
+                            <input type="text" class="form-control" aria-label="Last name" name="sobrenome">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                               <label for="inputEmail4" class="form-label">E-mail</label>
-                              <input type="email" class="form-control" id="inputEmail4">
+                              <input type="email" class="form-control" id="inputEmail4" name="email">
                             </div>
                             <div class="col-md-6">
                               <label for="inputPassword4" class="form-label">Senha</label>
-                              <input type="password" class="form-control" id="inputPassword4">
+                              <input type="password" class="form-control" id="inputPassword4" name="senha">
                             </div>
                         </div>
                         <div class="col-md-12">
+                          <label for="inputAddress" class="form-label">CPF</label>
+                          <input type="number" class="form-control" id="inputAddress" name="cpf">
+                        </div>
+                        <div class="col-md-12">
                           <label for="inputAddress" class="form-label">Endereço</label>
-                          <input type="text" class="form-control" id="inputAddress" placeholder="Rua...">
+                          <input type="text" class="form-control" id="inputAddress" placeholder="Rua..." name="endereco">
                         </div>
                         <div class="col-12 text-center">
                           <button type="submit" class="btn btn-primary">Realizar Cadastro</button>
                         </div>
                     </form>
+<!--                  <a href="/listar">Consultar Tudo</a><br><br>-->
+<!--                  <a href="/listarIndividual">Consultar Individual</a><br><br>-->
+<!--                  <a href="/atualizar">Atualizar</a><br><br>-->
+<!--                  <a href="/excluir">Excluir</a><br><br>-->
               </div>
             </div>
         <div class="col">
