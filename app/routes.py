@@ -51,7 +51,7 @@ def listarIndividual():
         dicionario = requisicao.json()
         idCadastro = "" #Recebe o ID
         for codigo in dicionario:
-            usuario = dicionario[codigo]['cpf'] #dado/campo. Filtro pelo CPF
+            usuario = dicionario[codigo]['cpf'] #dado/campo. Filtro pelo CPF, conforme verificado, cada cpf é substituido pelo proximo que a variavel recebe
             if(usuario == "123"):
                 idCadastro = codigo
 
@@ -59,22 +59,31 @@ def listarIndividual():
     except Exception as e:
         return f'Ocorreu um erro\n\n + {e}'
 
-@app.route('/logado')
+@app.route('/realizarLogin', methods=['POST'])
 def logado():
     try:
         email = request.form.get("emailLogin")
-        senha = request.form.get("emailSenha")
+        senha = request.form.get("senhaLogin")
 
-        requisicao = requests.get(f'{link}/cadastrar/.json)
+        requisicao = requests.get(f'{link}/cadastrar/.json')
         dicionario = requisicao.json()
         for codigo in dicionario:
-            usuario = dicionario[codigo]['email']
-            usuarioSenha = dicionario[codigo]['senha']
-            if (usuario == "123"):
-                idCadastro = codigo
-    return idCadastro
+            emailUsuario = dicionario[codigo]['email']
+            senhaUsuario = dicionario[codigo]['senha']
+            if (email == emailUsuario and senha == senhaUsuario):
+                tipo = dicionario[codigo]['tipo']
+                nome = dicionario[codigo]['nome']
+                if (tipo == "CLIENTE"):
+                    return render_template('cliente.html', titulo="Cliente", nome="Fabio", nomeUsuario=nome)
+                else:
+                    return render_template('admin.html', titulo="Admin", nome="Fabio", nomeUsuario=nome)
+            else:
+                continue
+        return "Login inválido ou inexistente"
     except Exception as e:
         return f'Ocorreu um erro\n\n + e'
+
+
 
 
 # -NySMXNOGQj8zFRALeqh
