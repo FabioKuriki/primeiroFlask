@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-    <h1>Bem-vindo {{nomeUsuario}}</h1>
-    <a href="/listar">Consultar Tudo</a><br><br>
-    <form action="/excluir" method="POST">
-        <label>CPF</label>
-        <input type="number" name="exclusaoCpf">
-        <button type="submit" class="btn btn-primary">Realizar Exclusão</button>
+    <h1 class="text-center">Bem-vindo {{nomeUsuario}}</h1>
+    <form class="container-fluid" action="/excluir" method="POST">
+        <br>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col text-center">
+                <a class="btn btn-primary" href="/listar">Consultar Tudo</a><br><br>
+                <label>CPF</label>
+                <input type="number" name="exclusaoCpf">
+                <button type="submit" class="btn btn-primary">Realizar Exclusão</button>
+            </div>
+            <div class="col"></div>
+        </div>
     </form>
 {% endblock %}

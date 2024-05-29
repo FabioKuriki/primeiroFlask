@@ -1,21 +1,41 @@
 {% extends 'base.html' %}
 {% block conteudo %}
     <h1 class="text-center">Bem-vindo {{nomeUsuario}}</h1>
-    <div id="formUsuarioCompleto">
-        <form id="formUsuario" action="/atualizar" method="POST">
-            <label>Nome:</label>
-            <input value="{{nomeUsuario}}" name="nomeCliente"><br><br>
-            <label>Sobrenome:</label>
-            <input value="{{sobrenomeUsuario}}" name="sobrenomeCliente"><br><br>
-            <label>E-mail:</label>
-            <input value="{{emailUsuario}}" name="emailCliente"><br><br>
-            <label>Senha:</label>
-            <input value="{{senhaUsuario}}" name="senhaCliente"><br><br>
-            <label>CPF:</label>
-            <input value="{{cpfUsuario}}" name="cpfCliente" readonly><br><br>
-            <label>Endereço:</label>
-            <input value="{{enderecoUsuario}}" name="enderecoCliente"><br><br>
-            <button type="submit" class="btn btn-primary">Atualizar Dados</button>
+        <form class="container-fluid" action="/atualizar" method="POST">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                      <div class="row">
+                            <label>Nome:</label>
+                            <input value="{{nomeUsuario}}" name="nomeCliente">
+                      </div>
+                      <div class="row">
+                            <label>Sobrenome:</label>
+                            <input value="{{sobrenomeUsuario}}" name="sobrenomeCliente">
+                      </div>
+                      <div class="row">
+                            <label>E-mail:</label>
+                            <input value="{{emailUsuario}}" name="emailCliente">
+                      </div>
+                      <div class="row">
+                            <label>Senha:</label>
+                            <input value="{{senhaUsuario}}" name="senhaCliente">
+                      </div>
+                      <div class="row">
+                            <label>CPF:</label>
+                            <input value="{{cpfUsuario}}" name="cpfCliente" readonly>
+                      </div>
+                      <div class="row">
+                            <label>Endereço:</label>
+                            <input value="{{enderecoUsuario}}" name="enderecoCliente">
+                      </div>
+                      <br>
+                      <div class="text-center">
+                          <button type="submit" class="btn btn-primary">Atualizar Dados</button>
+                      </div>
+                </div>
+                <div class="col"></div>
+            </div>
         </form>
     </div>
 
