@@ -1,4 +1,22 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-    <h1>Bem-vindo {{nomeUsuario}}</h1>
+    <h1 class="text-center">Bem-vindo {{nomeUsuario}}</h1>
+    <div id="formUsuarioCompleto">
+        <form id="formUsuario" action="/atualizar" method="POST">
+            <label>Nome:</label>
+            <input value="{{nomeUsuario}}" name="nomeCliente"><br><br>
+            <label>Sobrenome:</label>
+            <input value="{{sobrenomeUsuario}}" name="sobrenomeCliente"><br><br>
+            <label>E-mail:</label>
+            <input value="{{emailUsuario}}" name="emailCliente"><br><br>
+            <label>Senha:</label>
+            <input value="{{senhaUsuario}}" name="senhaCliente"><br><br>
+            <label>CPF:</label>
+            <input value="{{cpfUsuario}}" name="cpfCliente" readonly><br><br>
+            <label>Endereço:</label>
+            <input value="{{enderecoUsuario}}" name="enderecoCliente"><br><br>
+            <button type="submit" class="btn btn-primary">Atualizar Dados</button>
+        </form>
+    </div>
+
 {% endblock %}

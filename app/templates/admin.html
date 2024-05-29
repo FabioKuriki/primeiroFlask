@@ -2,4 +2,9 @@
 {% block conteudo %}
     <h1>Bem-vindo {{nomeUsuario}}</h1>
     <a href="/listar">Consultar Tudo</a><br><br>
+    <form action="/excluir" method="POST">
+        <label>CPF</label>
+        <input type="number" name="exclusaoCpf">
+        <button type="submit" class="btn btn-primary">Realizar Exclusão</button>
+    </form>
 {% endblock %}
