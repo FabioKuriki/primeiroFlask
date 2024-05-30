@@ -67,7 +67,7 @@
     margin-left: 6%;
 }
 
-#textoCadastro, #textoLogin, #menu, #menu2, #menu3, #menu4{
+#textoCadastro, #textoLogin, #textoUsuario, #menu, #menu2, #menu3, #menu4{
     color: #fff;
 }
 
@@ -100,7 +100,13 @@
     padding-bottom: 0.5%;
 }
 
-/*OLHAR A POSIÇÃO*/
+.inputCliente{
+    text-align: center;
+}
 
+#iconeCliente{
+    background-color: #87CEFA;
+    border-radius: 100%;
+}
 
 

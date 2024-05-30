@@ -5,21 +5,45 @@ import json
 import requests
 
 link = "https://flaskti18n-fe743-default-rtdb.firebaseio.com/" #Conecta o banco
-
+nome = ""
+sobrenome = ""
+email = ""
+senha = ""
+cpf = ""
+endereco = ""
+tipo = ""
+requisicao = ""
+dicionario = ""
+usuarioLogou = False
 
 # As rotas são para poder definir os caminhos
 @app.route('/')#Configurando uma rota web '/' == vazio, ao entrar no site vazio(sem a /) vai para o index.html
 @app.route('/index')#Tanto '/' quanto '/index', levam para index.html
 def index():
-    return render_template('index.html', titulo="Página Inicial", nome="Fabio")#Direciona para uma página
+    simOuNao = ""
+    if(usuarioLogou == True):
+        simOuNao = "d-none"
+    else:
+        simOuNao = ""
+    return render_template('index.html', titulo="Página Inicial", nome="Fabio" , nomeUsuario=nome, sobrenomeUsuario=sobrenome, display=simOuNao)#Direciona para uma página
 
 @app.route('/contato')
 def contato():
-    return render_template('contato.html', titulo="Contato", nome="Fabio")
+    simOuNao = ""
+    if (usuarioLogou == True):
+        simOuNao = "d-none"
+    else:
+        simOuNao = ""
+    return render_template('contato.html', titulo="Contato", nome="Fabio", nomeUsuario=nome, sobrenomeUsuario=sobrenome, display=simOuNao)
 
 @app.route('/cadastro')
 def cadastro():
-    return render_template('cadastro.html', titulo="Cadastro", nome="Fabio", fundoId="fundoLoginCadastro")
+    simOuNao = ""
+    if (usuarioLogou == True):
+        simOuNao = "d-none"
+    else:
+        simOuNao = ""
+    return render_template('cadastro.html', titulo="Cadastro", nome="Fabio", fundoId="fundoLoginCadastro", nomeUsuario=nome, sobrenomeUsuario=sobrenome, display=simOuNao)
 
 @app.route('/cadastrarUsuario', methods=['POST']) #POST = método de envio de dados pela rede(mais lento, mais seguro)  GET = (mais rapido, fica a mostra)
 def cadastrarUsuario():
@@ -74,8 +98,19 @@ def listarIndividual():
 @app.route('/realizarLogin', methods=['POST'])
 def logado():
     try:
+        global nome
+        global sobrenome
+        global email
+        global senha
+        global cpf
+        global endereco
+        global tipo
+        global usuarioLogou
+        global requisicao
+        global dicionario
         email = request.form.get("emailLogin")
         senha = request.form.get("senhaLogin")
+
 
         requisicao = requests.get(f'{link}/cadastrar/.json')
         dicionario = requisicao.json()
@@ -91,15 +126,58 @@ def logado():
                 cpf = dicionario[codigo]['cpf']
                 endereco = dicionario[codigo]['endereco']
                 if (tipo == "CLIENTE"):
-                    return render_template('cliente.html', titulo="Cliente", nome="Fabio", nomeUsuario=nome, sobrenomeUsuario=sobrenome, emailUsuario=email, senhaUsuario=senha, cpfUsuario=cpf, enderecoUsuario=endereco)
+                    usuarioLogou = True
+                    return render_template('cliente.html', titulo="Cliente", nome="Fabio", nomeUsuario=nome, sobrenomeUsuario=sobrenome, emailUsuario=email, senhaUsuario=senha, cpfUsuario=cpf, enderecoUsuario=endereco, display="d-none")
                 else:
-                    return render_template('admin.html', titulo="Admin", nome="Fabio", nomeUsuario=nome)
+                    usuarioLogou = True
+                    return render_template('admin.html', titulo="Admin", nome="Fabio", nomeUsuario=nome, sobrenomeUsuario=sobrenome, display="d-none")
             else:
                 continue
         return "Login inválido ou inexistente"
     except Exception as e:
         return f'Ocorreu um erro\n\n + e'
 
+@app.route('/logado')
+def logou():
+    global tipo
+    global email
+    global senha
+
+    requisicao = requests.get(f'{link}/cadastrar/.json')
+    dicionario = requisicao.json()
+    for codigo in dicionario:
+        emailUsuario = dicionario[codigo]['email']
+        senhaUsuario = dicionario[codigo]['senha']
+        if (email == emailUsuario and senha == senhaUsuario):
+            tipo = dicionario[codigo]['tipo']
+            nome = dicionario[codigo]['nome']
+            sobrenome = dicionario[codigo]['sobrenome']
+            email = dicionario[codigo]['email']
+            senha = dicionario[codigo]['senha']
+            cpf = dicionario[codigo]['cpf']
+            endereco = dicionario[codigo]['endereco']
+    if(tipo == "CLIENTE"):
+        return render_template('cliente.html', titulo="Cliente", nome="Fabio", nomeUsuario=nome, sobrenomeUsuario=sobrenome,
+                               emailUsuario=email, senhaUsuario=senha, cpfUsuario=cpf, enderecoUsuario=endereco,
+                               display="d-none")
+    else:
+        return render_template('admin.html', titulo="Admin", nome="Fabio", nomeUsuario=nome, sobrenomeUsuario=sobrenome,
+                               display="d-none")
+
+@app.route('/sair')
+def sair():
+    global usuarioLogou
+    global nome
+    global sobrenome
+    usuarioLogou = False
+    if (usuarioLogou == True):
+        simOuNao = "d-none"
+    else:
+        simOuNao = ""
+        nome = ""
+        sobrenome = ""
+    return render_template('index.html', titulo="Página Inicial", nome="Fabio", nomeUsuario=nome,
+                           sobrenomeUsuario=sobrenome, display=simOuNao)
 
 @app.route('/atualizar', methods=['POST'])
 def atualizar():
@@ -143,12 +221,27 @@ def excluir():
 
 @app.route('/login')
 def login():
-    return render_template('login.html', titulo="Login", nome="Fabio", fundoId="fundoLoginCadastro")
+    simOuNao = ""
+    if (usuarioLogou == True):
+        simOuNao = "d-none"
+    else:
+        simOuNao = ""
+    return render_template('login.html', titulo="Login", nome="Fabio", fundoId="fundoLoginCadastro", nomeUsuario=nome, sobrenomeUsuario=sobrenome, display=simOuNao)
 
 @app.route('/relogios')
 def relogios():
-    return render_template('relogios.html', titulo="Relogios", nome="Fabio")
+    simOuNao = ""
+    if (usuarioLogou == True):
+        simOuNao = "d-none"
+    else:
+        simOuNao = ""
+    return render_template('relogios.html', titulo="Relogios", nome="Fabio", nomeUsuario=nome, sobrenomeUsuario=sobrenome, display=simOuNao)
 
 @app.route('/historia')
 def historia():
-    return render_template('historia.html', titulo="História", nome="Fabio")
+    simOuNao = ""
+    if (usuarioLogou == True):
+        simOuNao = "d-none"
+    else:
+        simOuNao = ""
+    return render_template('historia.html', titulo="História", nome="Fabio", nomeUsuario=nome, sobrenomeUsuario=sobrenome, display=simOuNao)

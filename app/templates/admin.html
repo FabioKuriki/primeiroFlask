@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-    <h1 class="text-center">Bem-vindo {{nomeUsuario}}</h1>
+    <h1 class="text-center">Bem-vindo {{nomeUsuario}} {{sobrenomeUsuario}}</h1>
     <form class="container-fluid" action="/excluir" method="POST">
         <br>
         <div class="row">
             <div class="col"></div>
             <div class="col text-center">
+                <img id="iconeCliente" class="img-fluid" src="{{url_for('static', filename='imagens/iconeAdmin.png')}}"><br><br>
                 <a class="btn btn-primary" href="/listar">Consultar Tudo</a><br><br>
                 <label>CPF</label>
                 <input type="number" name="exclusaoCpf">
                 <button type="submit" class="btn btn-primary">Realizar Exclusão</button>
+                <br>
+                <a class="btn btn-primary" href="/sair">Sair</a>
             </div>
             <div class="col"></div>
         </div>

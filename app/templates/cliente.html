@@ -1,38 +1,42 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-    <h1 class="text-center">Bem-vindo {{nomeUsuario}}</h1>
-        <form class="container-fluid" action="/atualizar" method="POST">
+    <h1 class="text-center">Bem-vindo {{nomeUsuario}} {{sobrenomeUsuario}}</h1>
+        <form class="container-fluid text-center" action="/atualizar" method="POST">
             <div class="row">
                 <div class="col"></div>
                 <div class="col">
+                      <img id="iconeCliente" class="img-fluid" src="{{url_for('static', filename='imagens/iconeCliente.png')}}">
                       <div class="row">
                             <label>Nome:</label>
-                            <input value="{{nomeUsuario}}" name="nomeCliente">
+                            <input class="inputCliente" value="{{nomeUsuario}}" name="nomeCliente">
                       </div>
                       <div class="row">
                             <label>Sobrenome:</label>
-                            <input value="{{sobrenomeUsuario}}" name="sobrenomeCliente">
+                            <input class="inputCliente" value="{{sobrenomeUsuario}}" name="sobrenomeCliente">
                       </div>
                       <div class="row">
                             <label>E-mail:</label>
-                            <input value="{{emailUsuario}}" name="emailCliente">
+                            <input class="inputCliente" value="{{emailUsuario}}" name="emailCliente">
                       </div>
                       <div class="row">
                             <label>Senha:</label>
-                            <input value="{{senhaUsuario}}" name="senhaCliente">
+                            <input class="inputCliente" value="{{senhaUsuario}}" name="senhaCliente">
                       </div>
                       <div class="row">
                             <label>CPF:</label>
-                            <input value="{{cpfUsuario}}" name="cpfCliente" readonly>
+                            <input class="inputCliente" value="{{cpfUsuario}}" name="cpfCliente" readonly>
                       </div>
                       <div class="row">
                             <label>Endereço:</label>
-                            <input value="{{enderecoUsuario}}" name="enderecoCliente">
+                            <input class="inputCliente" value="{{enderecoUsuario}}" name="enderecoCliente">
                       </div>
-                      <br>
-                      <div class="text-center">
+                      <div>
                           <button type="submit" class="btn btn-primary">Atualizar Dados</button>
                       </div>
+                    <br>
+                    <div>
+                        <a class="btn btn-primary" href="/sair">Sair</a>
+                    </div>
                 </div>
                 <div class="col"></div>
             </div>
